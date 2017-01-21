@@ -1,0 +1,19 @@
+{
+  "name": "speech2text",
+  "version": "0.0.1",
+  "description": "speech to text",
+  "main": "app.js",
+  "scripts": {
+    "test": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hungrykirby/speech2text.git"
+  },
+  "author": "hungrykirby",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hungrykirby/speech2text/issues"
+  },
+  "homepage": "https://github.com/hungrykirby/speech2text#readme"
+}
