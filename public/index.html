@@ -1,14 +1,21 @@
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
 <body>
 
 
     <h3>Web Speech APIサンプル</h3>
 
 
-    <button id="btn">音声認識開始</button>
+    <!-- <button id="btn">音声認識開始</button> -->
+    <input type="button" id="btn" value="音声認識を継続的に行う" class="select" />
     <div id="content"></div>
+    <div id="final_span"></div>
+    <div id="interim_span"></div>
 
 
-    <script src="voice.js"></script>
+    <!-- <script src="voice.js"></script> -->
+    <script src="successionVoice.js"></script>
+    <script scr="load.js"></script>
 
 
 </body>
