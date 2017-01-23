@@ -1,0 +1,37 @@
+{
+  "_comment":[{
+    "word":"出力したい単語",
+    "include":"その単語が含まれていれば判定するか(例:trueならboyfriendをboyの一部と認識し、voidを出力する)",
+    "candidate":"候補文字"
+  }],
+  "collection":{
+    "data":
+      [
+        {
+          "word":"public",
+          "include": true,
+          "candidate":[
+            "public",
+            "pad",
+            "pan"
+          ]
+        },
+        {
+          "word":"class",
+          "include": true,
+          "candidate":[
+            "class",
+            "crara",
+            "cyuu"
+          ]
+        },
+        {
+          "word":"set",
+          "include": false,
+          "candidate":[
+            "set"
+          ]
+        }
+      ]
+  }
+}
