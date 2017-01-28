@@ -12,8 +12,21 @@
           "include": true,
           "candidate":[
             "public",
-            "pad",
-            "pan"
+            "probably",
+            "property",
+            "pirate",
+            "fabric",
+            "popery",
+            "pottery",
+            "Palm Beach",
+            "Barbie"
+          ]
+        },
+        {
+          "word":" ",
+          "include": false,
+          "candidate":[
+            "space"
           ]
         },
         {
@@ -21,8 +34,11 @@
           "include": true,
           "candidate":[
             "class",
-            "crara",
-            "cyuu"
+            "clock",
+            "craw",
+            "claw",
+            "cloth",
+            "close"
           ]
         },
         {
@@ -30,6 +46,74 @@
           "include": false,
           "candidate":[
             "set"
+          ]
+        },
+        {
+          "word":"{",
+          "include":false,
+          "candidate":[
+            "left parse",
+            "left path"
+          ]
+        },
+        {
+          "word":"  ",
+          "include":false,
+          "candidate":[
+            "tab",
+            "tap"
+          ]
+        },
+        {
+          "word":"\n",
+          "include":true,
+          "candidate":[
+            "enter"
+          ]
+        },
+        {
+          "word":"}",
+          "include":false,
+          "candidate":[
+            "right parse",
+            "right path"
+          ]
+        },
+        {
+          "word":"String",
+          "include":true,
+          "candidate":[
+            "string"
+          ]
+        },
+        {
+          "word":".",
+          "include":false,
+          "candidate":[
+            "dot",
+            "dots"
+          ]
+        },
+        {
+          "word":"system",
+          "include":true,
+          "candidate":[
+            "system"
+          ]
+        },
+        {
+          "word":"out",
+          "include":false,
+          "candidate":[
+            "out"
+          ]
+        },
+        {
+          "word":"print",
+          "include":true,
+          "candidate":[
+            "print",
+            "printer"
           ]
         }
       ]
