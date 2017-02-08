@@ -2,7 +2,7 @@
   "_comment":[{
     "word":"出力したい単語",
     "include":"その単語が含まれていれば判定するか(例:trueならboyfriendをboyの一部と認識し、voidを出力する)",
-    "candidate":"候補文字"
+    "candidate":"候補文字, confidence"
   }],
   "collection":{
     "data":
@@ -11,109 +11,224 @@
           "word":"public",
           "include": true,
           "candidate":[
-            "public",
-            "probably",
-            "property",
-            "pirate",
-            "fabric",
-            "popery",
-            "pottery",
-            "Palm Beach",
-            "Barbie"
+            ["public", 1],
+            ["probably", 1],
+            ["property", 1],
+            ["pirate", 1],
+            ["fabric", 1],
+            ["popery", 1],
+            ["pottery", 1],
+            ["Palm Beach", 1],
+            ["Barbie", 1],
+            ["Tomic", 1]
           ]
         },
         {
           "word":" ",
           "include": false,
           "candidate":[
-            "space"
+            ["space", 1]
           ]
         },
         {
           "word":"class",
           "include": true,
           "candidate":[
-            "class",
-            "clock",
-            "craw",
-            "claw",
-            "cloth",
-            "close"
+            ["class", 1],
+            ["clock", 1],
+            ["craw", 1],
+            ["claw", 1],
+            ["cloth", 1],
+            ["close", 1],
+            ["Plus", 1],
+            ["plus", 1],
+            ["grass", 1],
+            ["draft", 1],
+            ["Ros", 1],
+            ["Ross", 1],
+            ["Los", 1],
+            ["cross", 1]
+          ]
+        },
+        {
+          "word":"static",
+          "include":true,
+          "candidate":[
+            ["static", 1],
+            ["stop it", 1],
+            ["topic", 1]
+          ]
+        },
+        {
+          "word":"void",
+          "include":true,
+          "candidate":[
+            ["boy", 1],
+            ["void", 1],
+            ["voice", 1],
+            ["point", 1]
           ]
         },
         {
           "word":"set",
           "include": false,
           "candidate":[
-            "set"
+            ["set", 1]
+          ]
+        },
+        {
+          "word":"(",
+          "include":false,
+          "candidate":[
+            ["left parenthesis", 1],
+            ["left parentheses", 1],
+            ["left princess", 1],
+            ["left princesses", 1],
+            ["gift of Prophecy", 1],
+            ["best princesses", 1],
+            ["lift princesses", 1],
+            ["big princesses", 1],
+            ["big princess", 1],
+            ["best princesses", 1]
+          ]
+        },
+        {
+          "word":")",
+          "include":false,
+          "candidate":[
+            ["right parenthesis", 1],
+            ["like princesses", 1],
+            ["rewrite princesses", 1],
+            ["white princesses", 1],
+            ["light princesses", 1]
+          ]
+        },
+        {
+          "word":"\t",
+          "include":false,
+          "candidate":[
+            ["tab", 1],
+            ["tap", 1],
+            ["top", 1],
+            ["of", 1],
+            ["talk", 1]
           ]
         },
         {
           "word":"{",
-          "include":false,
+          "include":true,
           "candidate":[
-            "left parse",
-            "left path"
+            ["left brace", 1],
+            ["lift brace", 1]
           ]
         },
         {
-          "word":"  ",
-          "include":false,
+          "word":"}",
+          "include":true,
           "candidate":[
-            "tab",
-            "tap"
+            ["right brace"],
+            ["light brace"]
+          ]
+        },
+        {
+          "word":"[",
+          "include":true,
+          "candidate":[
+            ["left bracket", 1],
+            ["lift bracket", 1]
+          ]
+        },
+        {
+          "word":"]",
+          "include":true,
+          "candidate":[
+            ["right bracket", 1],
+            ["light bracket", 1]
+          ]
+        },
+        {
+          "word":"\"",
+          "include":true,
+          "candidate":[
+            ["double quotation", 1],
+            ["double mark",1],
+            ["dollar quotation", 1],
+            ["fabrication", 1],
+            ["navigation", 1],
+            ["Tokyo Station", 1],
+            ["location", 1],
+            ["navigation", 1],
+            ["vocation", 1]
           ]
         },
         {
           "word":"\n",
           "include":true,
           "candidate":[
-            "enter"
-          ]
-        },
-        {
-          "word":"}",
-          "include":false,
-          "candidate":[
-            "right parse",
-            "right path"
+            ["enter", 1],
+            ["Bento", 1],
+            ["inter", 1],
+            ["wow", 1]
           ]
         },
         {
           "word":"String",
           "include":true,
           "candidate":[
-            "string"
+            ["string", 1]
           ]
         },
         {
           "word":".",
           "include":false,
           "candidate":[
-            "dot",
-            "dots"
+            ["dot", 1],
+            ["dots", 1]
           ]
         },
         {
-          "word":"system",
+          "word":";",
           "include":true,
           "candidate":[
-            "system"
+            ["semicolon", 1]
+          ]
+        },
+        {
+          "word":"System",
+          "include":true,
+          "candidate":[
+            ["system", 1]
           ]
         },
         {
           "word":"out",
           "include":false,
           "candidate":[
-            "out"
+            ["out", 1]
           ]
         },
         {
           "word":"print",
           "include":true,
           "candidate":[
-            "print",
-            "printer"
+            ["print", 1],
+            ["printer", 1]
+          ]
+        },
+        {
+          "word":"削除",
+          "include":false,
+          "candidate":[
+            ["delete", 1],
+            ["did", 1]
+          ]
+        },
+        {
+          "word":"Ctrl+z",
+          "include":false,
+          "candidate":[
+            ["I love you", 1],
+            ["i love you", 1]
           ]
         }
       ]

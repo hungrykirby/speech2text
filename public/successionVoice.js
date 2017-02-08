@@ -1,12 +1,14 @@
 // 音声認識機能
 var recognition;
 var nowRecognition = false;
+let startFlag = false;
 const socket = io.connect();
 
 // 音声認識開始のメソッド
 function start () {
   recognition = new webkitSpeechRecognition();
   recognition.lang = 'en';
+  recognition.maxAlternatives = 10;
   // 以下2点がポイント！！
   // 継続的に処理を行い、不確かな情報も取得可能とする.
   recognition.continuous = true;
@@ -18,17 +20,38 @@ function start () {
 
   recognition.onresult = function (e) {
     socket.emit('status', 'result')
-    var finalText = '';
-    var interimText = '';
+    let finalText = '';
+    let interimText = '';
+    let confidence = 0;
+    let result = {
+      word: '',
+      confidence: confidence
+    };
     // isFinalがtrueの場合は確定した内容
     if (e.results[e.results.length - 1].isFinal) {
-        finalText = e.results[e.results.length - 1][0].transcript;
-        console.log('finalText', finalText);
-        socket.emit('finalText', finalText);
+      results = [];
+      for(var i = 0; i < e.results[e.results.length - 1].length; i++){
+        finalText = String(e.results[e.results.length - 1][i].transcript).trim();
+        confidence = Number(e.results[e.results.length - 1][i].confidence);
+        result = {
+          word: finalText,
+          confidence: confidence
+        };
+        console.log('send data', result);
+        //socket.emit('final_result', result);
+        results.push(result);
+      }
+      socket.emit('final_result', results);
     } else {
-        interimText = e.results[e.results.length - 1][0].transcript;
-        console.log('interimText', interimText);
-        socket.emit('interimText', interimText);
+        interimText = String(e.results[e.results.length - 1][0].transcript).trim();
+        confidence = Number(e.results[e.results.length - 1][0].confidence);
+        result = {
+          word: interimText,
+          confidence: confidence
+        };
+        nowRecognition = true;
+        console.log('send data', result);
+        socket.emit('interim_result', result);
     }
   };
 
@@ -43,11 +66,19 @@ function start () {
     socket.emit('status', 'stop');
     start();
   };
+  nowRecognition = false;
   recognition.start();
-  nowRecognition = true;
 };
 
-
+if(startFlag = socket.on('start')){
+  start();
+  document.querySelector('#btn').value = '音声認識を止める';
+  document.querySelector('#btn').className = 'select';
+}else{
+  stop();
+  document.querySelector('#btn').value = '音声認識を継続的に行う';
+  document.querySelector('#btn').className = '';
+}
 
 // ボタンアクションの定義
 document.querySelector('#btn').onclick = function () {
@@ -57,7 +88,7 @@ document.querySelector('#btn').onclick = function () {
         alert('Web Speech API には未対応です.');
         return;
     }
-
+    /*
     if (nowRecognition) {
         stop();
         this.value = '音声認識を継続的に行う';
@@ -67,4 +98,5 @@ document.querySelector('#btn').onclick = function () {
         this.value = '音声認識を止める';
         this.className = 'select';
     }
+    */
 }
