@@ -6,6 +6,8 @@ const socket = io.connect();
 
 // 音声認識開始のメソッド
 function start () {
+  //setTimeout(function()
+
   recognition = new webkitSpeechRecognition();
   recognition.lang = 'en';
   recognition.maxAlternatives = 10;
@@ -28,7 +30,7 @@ function start () {
       confidence: confidence
     };
     // isFinalがtrueの場合は確定した内容
-    if (e.results[e.results.length - 1].isFinal) {
+    if (e.results[e.results.length - 1].isFinal || e.results.final) {
       results = [];
       for(var i = 0; i < e.results[e.results.length - 1].length; i++){
         finalText = String(e.results[e.results.length - 1][i].transcript).trim();
@@ -42,6 +44,9 @@ function start () {
         results.push(result);
       }
       socket.emit('final_result', results);
+      setTimeout(function(){
+        recognition.stop();
+      }, 200);
     } else {
         interimText = String(e.results[e.results.length - 1][0].transcript).trim();
         confidence = Number(e.results[e.results.length - 1][0].confidence);
@@ -55,8 +60,12 @@ function start () {
     }
   };
 
-  recognition.onerror = function(){
-    socket.emit('status', 'error');
+  recognition.onnomatch = function(){
+    socket.emit('status', 'no_match');
+  }
+
+  recognition.onerror = function(error){
+    socket.emit('status', error.error);
     if(!nowRecognition){
       start();
     }
@@ -68,6 +77,7 @@ function start () {
   };
   nowRecognition = false;
   recognition.start();
+  //}, 2000);
 };
 
 if(startFlag = socket.on('start')){
