@@ -1,0 +1,10 @@
+like princesses,0.6752134561538696
+like princesses,0.5142358541488647
+rewrite princesses,0.6269227266311646
+white princesses,0.7212852239608765
+write princesses,0.500106692314148
+right parenthesis,0.660232424736023
+light princesses,0.8318707346916199
+right parenthesis,0.3122328221797943
+right parenthesis,0.3242025673389435
+right parenthesis,0.6500247716903687

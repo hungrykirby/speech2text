@@ -70,6 +70,14 @@
           ]
         },
         {
+          "word":"main",
+          "include":true,
+          "candidate":[
+            ["Maine", 1],
+            ["mine", 1]
+          ]
+        },
+        {
           "word":"set",
           "include": false,
           "candidate":[
@@ -87,6 +95,8 @@
             ["gift of Prophecy", 1],
             ["best princesses", 1],
             ["lift princesses", 1],
+            ["little princesses", 1],
+            ["list of princesses", 1],
             ["big princesses", 1],
             ["big princess", 1],
             ["best princesses", 1]
@@ -119,7 +129,15 @@
           "include":true,
           "candidate":[
             ["left brace", 1],
-            ["lift brace", 1]
+            ["lift brace", 1],
+            ["if the race", 1],
+            ["bast place", 1],
+            ["bast price", 1],
+            ["Death Race", 1],
+            ["wrist brace", 1],
+            ["neck brace", 1],
+            ["list of race", 1],
+            ["best of race", 1]
           ]
         },
         {
@@ -135,7 +153,10 @@
           "include":true,
           "candidate":[
             ["left bracket", 1],
-            ["lift bracket", 1]
+            ["lift bracket", 1],
+            ["llttle rocket", 1],
+            ["list of rockets", 1],
+            ["if the brackets", 1]
           ]
         },
         {
@@ -143,7 +164,8 @@
           "include":true,
           "candidate":[
             ["right bracket", 1],
-            ["light bracket", 1]
+            ["light bracket", 1],
+            ["guided rocket", 1]
           ]
         },
         {
@@ -175,7 +197,10 @@
           "word":"String",
           "include":true,
           "candidate":[
-            ["string", 1]
+            ["string", 1],
+            ["putting", 1],
+            ["13", 1],
+            ["Towing", 1]
           ]
         },
         {
@@ -228,7 +253,8 @@
           "include":false,
           "candidate":[
             ["I love you", 1],
-            ["i love you", 1]
+            ["i love you", 1],
+            ["back", 1]
           ]
         }
       ]

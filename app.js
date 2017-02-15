@@ -43,9 +43,9 @@ io.sockets.on('connection', function(socket) {
           arr_all_text.push(outputs.add_text);
         }
       }
-
-      console.log("現状の文章");
       console.log(all_text);
+      console.log("---------------------------------------");
+      console.log("現状の文章");
       console.log(arr_all_text.toString().replace(/,/g,''));
       console.log("---------------------------------------");
     });
